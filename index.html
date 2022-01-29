@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Business Card by Hoa Truong</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        /* The body's color */
+        body{
+            min-height: 100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background-image: linear-gradient(to bottom right, #4A6274, #aba7a7);
+        }
+
+        /* We have the transform style (preserve-3d), so when we click, there will be a transformation effect */
+        .business_card {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            transition: 1s;
+            transform-style: preserve-3d;
+        }
+
+        /* When the user click the card, it will turn to the other side */
+        .business_card.cardFlip{
+            transform: rotateY(-180deg);
+        }
+
+        /* The font-size for Phone, Address, Name, Phone Number, Email Contact, Address */
+        h2{
+            display: flex;
+            font-size: 1.3em;
+        }
+
+        /* Adjust the spacing for the school name and its' information */
+        h1, h2{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .content_front,
+        .content_back{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            border-radius: 20px;
+            backface-visibility: hidden;
+        }
+
+        .content_front{
+            background: linear-gradient(97deg,rgba(255, 255, 255, 0.4) 58%,#d5d5d3 0);
+        }
+
+        .left_side{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content_back{
+            background: linear-gradient(rgba(255, 255, 255, 0.4),#d5d5d3);
+            transform: rotateY(180deg);
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        @media(max-width: 635px){
+            .left_side{
+                justify-content: start;
+                align-items: initial;
+                margin-left: 0;
+            }
+        }
+
+        @media(max-width: 545px){
+            .content_front{
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 58%,#d5d5d3 0);
+            }
+        }
+
+        @media(max-width: 540px){
+            .content_front {
+                flex-direction: column;
+                width:80%;
+                height: auto;
+                background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 45%,#d5d5d3 0)
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="business_card">
+        <div class="content_front">
+            <div class="left_side">
+                <h1>University of Texas at Austin</h1>
+                <h2> Phone: </h2>
+                <p>512-471-3434.</p>
+                <h2> Address: </h2>
+                <p>110 Inner Campus Drive
+                    Austin, TX 78705.</p>
+
+            </div>
+            <div class="right_side">
+                <div class="person right_content">
+                    <div class="name">
+                        <h2>1/ Hoa Truong</h2>
+                        <p>Undergraduate Student</p>
+                    </div>
+                    <div class="contact right_content">
+                        <h2>2/ Phone number</h2>
+                        <p>(+1) 111-123 456</p>
+                    </div>
+                    <div class="Email right_content">
+                        <h2>3/ Email</h2>
+                        <p>hello123@gmail.com</p>
+                    </div>
+                    <div class="Address right_content">
+                        <h2>4/ Address</h2>
+                        <p>1234 Guadalupe, Austin, TX 78705</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_back">
+            <h1>University of Texas at Austin</h1>
+            <img src='https://i.postimg.cc/sBv8Qb4P/Logo.png' alt='Logo' width="100" height="100"/>
+        </div>
+    </div>
+
+    <script>
+        const business_card = document.querySelector(".business_card");
+
+        business_card.addEventListener("click",() => {
+            business_card.classList.toggle("cardFlip");
+        })
+    </script>
+</body>
+</html>
