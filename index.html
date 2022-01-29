@@ -13,10 +13,8 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            justify-content:center;
             background-image: linear-gradient(to bottom right, #4A6274, #aba7a7);
         }
-
 
         /* We have the transform style (preserve-3d), so when we click, there will be a transformation effect */
         .business_card {
@@ -25,7 +23,6 @@
             height: 350px;
             transition: 1s;
             transform-style: preserve-3d;
-            
         }
 
         /* When the user click the card, it will turn to the other side */
@@ -74,7 +71,14 @@
             pointer-events: none;
         }
 
-        @media(max-width: 545px){
+        @media(max-width: 635px){
+            .left_side{
+                justify-content: start;
+                align-items: initial;
+                margin-left: 0;
+            }
+        }
+                @media(max-width: 545px){
             .content_front{
                 background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 60%,#d5d5d3 0);
             }
@@ -94,48 +98,51 @@
             }
         }
 
+
     </style>
 </head>
 <body>
-        <div class="business_card">
-            <div class="content_front">
-                <div class="left_side">
-                    <h1>University of Texas at Austin</h1>
-                    <h2> Phone: </h2>
-                    <p>512-471-3434.</p>
-                    <h2> Address: </h2>
-                    <p>110 Inner Campus Drive
-                        Austin, TX 78705.</p>
-                </div>
-                <div class="right_side">
-                    <div class="person right_content">
-                        <div class="name">
-                            <h2>1/ Hoa Truong</h2>
-                            <p>Undergraduate Student</p>
-                        </div>
-                        <div class="contact right_content">
-                            <h2>2/ Phone number</h2>
-                            <p>(+1) 111-123 456</p>
-                        </div>
-                        <div class="Email right_content">
-                            <h2>3/ Email</h2>
-                            <p>hello123@gmail.com</p>
-                        </div>
-                        <div class="Address right_content">
-                            <h2>4/ Address</h2>
-                            <p>1234 Guadalupe, Austin, TX 78705</p>
-                        </div>
+    <div class="business_card">
+        <div class="content_front">
+            <div class="left_side">
+                <h1>University of Texas at Austin</h1>
+                <h2> Phone: </h2>
+                <p>512-471-3434.</p>
+                <h2> Address: </h2>
+                <p>110 Inner Campus Drive
+                    Austin, TX 78705.</p>
+
+            </div>
+            <div class="right_side">
+                <div class="person right_content">
+                    <div class="name">
+                        <h2>1/ Hoa Truong</h2>
+                        <p>Undergraduate Student</p>
+                    </div>
+                    <div class="contact right_content">
+                        <h2>2/ Phone number</h2>
+                        <p>(+1) 111-123 456</p>
+                    </div>
+                    <div class="Email right_content">
+                        <h2>3/ Email</h2>
+                        <p>hello123@gmail.com</p>
+                    </div>
+                    <div class="Address right_content">
+                        <h2>4/ Address</h2>
+                        <p>1234 Guadalupe, Austin, TX 78705</p>
                     </div>
                 </div>
             </div>
-            <div class="content_back">
-                <h1>University of Texas at Austin</h1>
-                <img src='https://i.postimg.cc/sBv8Qb4P/Logo.png' alt='Logo' width="100" height="100"/>
-            </div>
         </div>
+        <div class="content_back">
+            <h1>University of Texas at Austin</h1>
+            <img src='https://i.postimg.cc/sBv8Qb4P/Logo.png' alt='Logo' width="100" height="100"/>
+        </div>
+    </div>
+
     <script>
         const business_card = document.querySelector(".business_card");
-        // when the user click the button, the card will flip to the other side 
+
         business_card.addEventListener("click",() => {
             business_card.classList.toggle("cardFlip");
         })
